@@ -1,0 +1,16 @@
+{
+  "locks": [
+    {
+      "locator": "/Volumes/Development/Development/pony/pony.fileExt"
+    },
+    {
+      "locator": "/Volumes/Development/Development/pony/pony.flow"
+    },
+    {
+      "locator": "/Volumes/Development/Development/pony/pony.bitmap"
+    },
+    {
+      "locator": "/Volumes/Development/Development/pony/pony.png"
+    }
+  ]
+}
