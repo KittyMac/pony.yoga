@@ -1025,7 +1025,7 @@ bool YGLayoutNodeInternal(
     const uint32_t depth,
     const uint32_t generationCount);
 
-#ifdef DEBUG
+
 static void YGNodePrintInternal(
     const YGNodeRef node,
     const YGPrintOptions options) {
@@ -1039,7 +1039,7 @@ YOGA_EXPORT void YGNodePrint(
     const YGPrintOptions options) {
   YGNodePrintInternal(node, options);
 }
-#endif
+
 
 const std::array<YGEdge, 4> leading = {
     {YGEdgeTop, YGEdgeBottom, YGEdgeLeft, YGEdgeRight}};

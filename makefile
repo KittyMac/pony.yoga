@@ -2,14 +2,17 @@ bitmap_lib_dir=../pony.bitmap/lib
 build_dir=./build
 lib_dir=./lib
 
-all: pony run
-	
+all: yoga pony run
+
+yoga:
+	cd ./libyoga && make
+
 check:
 	@mkdir -p $(build_dir)
 	@mkdir -p $(lib_dir)
 
 pony: check copy-libs
-	corral run -- ponyc -p $(lib_dir) -o ./build/ ./yoga
+	corral run -- ponyc --print-code -p $(lib_dir) -o ./build/ ./yoga
 
 copy-libs:
 	@cp ./libyoga/build/osx/lib/libyoga.a $(lib_dir)/libyoga-osx.a

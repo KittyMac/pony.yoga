@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#ifdef DEBUG
+
 #pragma once
 #include <string>
 
@@ -22,4 +22,4 @@ void YGNodeToString(
 
 } // namespace yoga
 } // namespace facebook
-#endif
+

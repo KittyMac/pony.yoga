@@ -17,6 +17,11 @@ class iso _TestYoga1 is UnitTest
 
 	fun apply(h: TestHelper) =>
       h.long_test(30_000_000_000)
+      
+      let node = YGNode
+      node.layout()
+      node.print()
+      
       h.complete(false)
 	
 

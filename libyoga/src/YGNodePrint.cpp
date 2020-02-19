@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#ifdef DEBUG
+
 #include "YGNodePrint.h"
 #include <stdarg.h>
 #include "YGEnums.h"
@@ -222,4 +222,3 @@ void YGNodeToString(
 }
 } // namespace yoga
 } // namespace facebook
-#endif
