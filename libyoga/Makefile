@@ -29,13 +29,13 @@ check:
 	@mkdir -p $(includedir_osx)
 
 osx:
-	cd $(builddir_osx) && $(clang_osx) -c ../../src/*.cpp ../../src/event/*.cpp ../../src/internal/*.cpp -I../../src/ -std=gnu++14 -arch x86_64 -isysroot $(isysroot_osx)
+	cd $(builddir_osx) && $(clang_osx) -Ofast -c ../../src/*.cpp ../../src/event/*.cpp ../../src/internal/*.cpp -I../../src/ -std=gnu++14 -arch x86_64 -isysroot $(isysroot_osx)
 	@$(libtool_osx) -static $(builddir_osx)/*.o -o $(libdir_osx)/libyoga.a
 	cp src/*.h $(includedir_osx)/
 	rm $(builddir_osx)/*.o
 
 ios:
-	cd $(builddir_ios) && $(clang_ios) -c ../../src/*.cpp ../../src/event/*.cpp ../../src/internal/*.cpp -I../../src/ -std=gnu++14 -arch arm64 -isysroot $(isysroot_ios)
+	cd $(builddir_ios) && $(clang_ios) -Ofast -c ../../src/*.cpp ../../src/event/*.cpp ../../src/internal/*.cpp -I../../src/ -std=gnu++14 -arch arm64 -isysroot $(isysroot_ios)
 	@$(libtool_ios) -static $(builddir_ios)/*.o -o $(libdir_ios)/libyoga.a
 	cp src/*.h $(includedir_ios)/
 	rm $(builddir_ios)/*.o
