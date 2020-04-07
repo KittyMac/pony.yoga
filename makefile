@@ -12,7 +12,7 @@ check:
 	@mkdir -p $(lib_dir)
 
 pony: check copy-libs
-	corral run -- ponyc --print-code -p $(lib_dir) -o ./build/ ./yoga
+	corral run -- ponyc --extfun --print-code -p $(lib_dir) -o ./build/ ./yoga
 
 copy-libs:
 	@cp ./libyoga/build/osx/lib/libyoga.a $(lib_dir)/libyoga-osx.a
@@ -26,7 +26,7 @@ run:
 	./build/yoga
 
 test: check-folders copy-libs
-	corral run -- ponyc -V=0 -p $(lib_dir) -o ./build/ ./yoga
+	corral run -- ponyc --extfun -V=0 -p $(lib_dir) -o ./build/ ./yoga
 	./build/yoga
 
 

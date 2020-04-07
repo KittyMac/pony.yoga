@@ -18,9 +18,9 @@ class iso _TestYoga1 is UnitTest
 	fun apply(h: TestHelper) =>
       h.long_test(30_000_000_000)
       
-      let renderEngineNode = YGNode
-      let fullScreenColorNode = YGNode
-      let centerColorNode = YGNode
+      let renderEngineNode = SampleYogaNode
+      let fullScreenColorNode = SampleYogaNode
+      let centerColorNode = SampleYogaNode
       
       renderEngineNode.addChild(fullScreenColorNode)
       fullScreenColorNode.addChild(centerColorNode)

@@ -25,6 +25,8 @@
 #define WIN_EXPORT
 
 YG_EXTERN_C_BEGIN
+  
+#define YGValue float
 
 typedef struct YGSize {
   float width;

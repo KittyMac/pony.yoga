@@ -24,7 +24,7 @@ class SampleYogaNode
   fun ref setHeight(h:F32) =>
     @YGNodeStyleSetHeight(node, h)
   
-  fun addChild(child:YGNode) =>
+  fun addChild(child:SampleYogaNode) =>
     @YGNodeInsertChild(node, child.node, @YGNodeGetChildCount(node))
   
   fun layout() =>
