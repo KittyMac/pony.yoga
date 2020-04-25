@@ -1040,6 +1040,14 @@ YOGA_EXPORT void YGNodePrint(
   YGNodePrintInternal(node, options);
 }
 
+YOGA_EXPORT const char * YGNodePrintString(
+    const YGNodeRef node, 
+    const YGPrintOptions options) {
+    std::string str;
+    facebook::yoga::YGNodeToString(str, node, options, 0);
+    return str.c_str();
+}
+
 
 const std::array<YGEdge, 4> leading = {
     {YGEdgeTop, YGEdgeBottom, YGEdgeLeft, YGEdgeRight}};
