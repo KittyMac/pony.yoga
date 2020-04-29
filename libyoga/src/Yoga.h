@@ -212,6 +212,9 @@ WIN_EXPORT void YGNodeStyleSetPositionPercent(
     YGEdge edge,
     float position);
 WIN_EXPORT YGValue YGNodeStyleGetPosition(YGNodeConstRef node, YGEdge edge);
+YOGA_EXPORT float YGNodeStyleGetPositionFloat(YGNodeConstRef node, YGEdge edge);
+
+WIN_EXPORT float YGValueToF32(uint32_t v);
 
 WIN_EXPORT void YGNodeStyleSetMargin(YGNodeRef node, YGEdge edge, float margin);
 WIN_EXPORT void YGNodeStyleSetMarginPercent(
@@ -220,6 +223,7 @@ WIN_EXPORT void YGNodeStyleSetMarginPercent(
     float margin);
 WIN_EXPORT void YGNodeStyleSetMarginAuto(YGNodeRef node, YGEdge edge);
 WIN_EXPORT YGValue YGNodeStyleGetMargin(YGNodeConstRef node, YGEdge edge);
+WIN_EXPORT float YGNodeStyleGetMarginFloat(YGNodeConstRef node, YGEdge edge);
 
 WIN_EXPORT void YGNodeStyleSetPadding(
     YGNodeRef node,
@@ -230,6 +234,7 @@ WIN_EXPORT void YGNodeStyleSetPaddingPercent(
     YGEdge edge,
     float padding);
 WIN_EXPORT YGValue YGNodeStyleGetPadding(YGNodeConstRef node, YGEdge edge);
+WIN_EXPORT float YGNodeStyleGetPaddingFloat(YGNodeConstRef node, YGEdge edge);
 
 WIN_EXPORT void YGNodeStyleSetBorder(YGNodeRef node, YGEdge edge, float border);
 WIN_EXPORT float YGNodeStyleGetBorder(YGNodeConstRef node, YGEdge edge);
@@ -238,27 +243,33 @@ WIN_EXPORT void YGNodeStyleSetWidth(YGNodeRef node, float width);
 WIN_EXPORT void YGNodeStyleSetWidthPercent(YGNodeRef node, float width);
 WIN_EXPORT void YGNodeStyleSetWidthAuto(YGNodeRef node);
 WIN_EXPORT YGValue YGNodeStyleGetWidth(YGNodeConstRef node);
+WIN_EXPORT float YGNodeStyleGetWidthFloat(YGNodeConstRef node);
 
 WIN_EXPORT void YGNodeStyleSetHeight(YGNodeRef node, float height);
 WIN_EXPORT void YGNodeStyleSetHeightPercent(YGNodeRef node, float height);
 WIN_EXPORT void YGNodeStyleSetHeightAuto(YGNodeRef node);
 WIN_EXPORT YGValue YGNodeStyleGetHeight(YGNodeConstRef node);
+WIN_EXPORT float YGNodeStyleGetHeightFloat(YGNodeConstRef node);
 
 WIN_EXPORT void YGNodeStyleSetMinWidth(YGNodeRef node, float minWidth);
 WIN_EXPORT void YGNodeStyleSetMinWidthPercent(YGNodeRef node, float minWidth);
 WIN_EXPORT YGValue YGNodeStyleGetMinWidth(YGNodeConstRef node);
+WIN_EXPORT float YGNodeStyleGetMinWidthFloat(YGNodeConstRef node);
 
 WIN_EXPORT void YGNodeStyleSetMinHeight(YGNodeRef node, float minHeight);
 WIN_EXPORT void YGNodeStyleSetMinHeightPercent(YGNodeRef node, float minHeight);
 WIN_EXPORT YGValue YGNodeStyleGetMinHeight(YGNodeConstRef node);
+WIN_EXPORT float YGNodeStyleGetMinHeightFloat(YGNodeConstRef node);
 
 WIN_EXPORT void YGNodeStyleSetMaxWidth(YGNodeRef node, float maxWidth);
 WIN_EXPORT void YGNodeStyleSetMaxWidthPercent(YGNodeRef node, float maxWidth);
 WIN_EXPORT YGValue YGNodeStyleGetMaxWidth(YGNodeConstRef node);
+WIN_EXPORT float YGNodeStyleGetMaxWidthFloat(YGNodeConstRef node);
 
 WIN_EXPORT void YGNodeStyleSetMaxHeight(YGNodeRef node, float maxHeight);
 WIN_EXPORT void YGNodeStyleSetMaxHeightPercent(YGNodeRef node, float maxHeight);
 WIN_EXPORT YGValue YGNodeStyleGetMaxHeight(YGNodeConstRef node);
+WIN_EXPORT float YGNodeStyleGetMaxHeightFloat(YGNodeConstRef node);
 
 // Yoga specific properties, not compatible with flexbox specification Aspect
 // ratio control the size of the undefined dimension of a node. Aspect ratio is

@@ -759,6 +759,10 @@ YOGA_EXPORT YGValue YGNodeStyleGetPosition(YGNodeConstRef node, YGEdge edge) {
   return node->getStyle().position()[edge];
 }
 
+YOGA_EXPORT float YGNodeStyleGetPositionFloat(YGNodeConstRef node, YGEdge edge) {
+  return YGResolveValue( node->getStyle().position()[edge], 0.0 ).unwrap();
+}
+
 YOGA_EXPORT void YGNodeStyleSetMargin(
     YGNodeRef node,
     YGEdge edge,
@@ -782,6 +786,9 @@ YOGA_EXPORT void YGNodeStyleSetMarginAuto(YGNodeRef node, YGEdge edge) {
 YOGA_EXPORT YGValue YGNodeStyleGetMargin(YGNodeConstRef node, YGEdge edge) {
   return node->getStyle().margin()[edge];
 }
+YOGA_EXPORT float YGNodeStyleGetMarginFloat(YGNodeConstRef node, YGEdge edge) {
+  return YGResolveValue( node->getStyle().margin()[edge], 0.0 ).unwrap();
+}
 
 YOGA_EXPORT void YGNodeStyleSetPadding(
     YGNodeRef node,
@@ -801,6 +808,9 @@ YOGA_EXPORT void YGNodeStyleSetPaddingPercent(
 }
 YOGA_EXPORT YGValue YGNodeStyleGetPadding(YGNodeConstRef node, YGEdge edge) {
   return node->getStyle().padding()[edge];
+}
+YOGA_EXPORT float YGNodeStyleGetPaddingFloat(YGNodeConstRef node, YGEdge edge) {
+  return YGResolveValue( node->getStyle().padding()[edge], 0.0 ).unwrap();
 }
 
 // TODO(T26792433): Change the API to accept YGFloatOptional.
@@ -862,6 +872,9 @@ YOGA_EXPORT void YGNodeStyleSetWidthAuto(YGNodeRef node) {
 YOGA_EXPORT YGValue YGNodeStyleGetWidth(YGNodeConstRef node) {
   return node->getStyle().dimensions()[YGDimensionWidth];
 }
+YOGA_EXPORT float YGNodeStyleGetWidthFloat(YGNodeConstRef node) {
+  return YGResolveValue( node->getStyle().dimensions()[YGDimensionWidth], 0.0 ).unwrap();
+}
 
 YOGA_EXPORT void YGNodeStyleSetHeight(YGNodeRef node, float points) {
   auto value = detail::CompactValue::ofMaybe<YGUnitPoint>(points);
@@ -883,6 +896,9 @@ YOGA_EXPORT void YGNodeStyleSetHeightAuto(YGNodeRef node) {
 YOGA_EXPORT YGValue YGNodeStyleGetHeight(YGNodeConstRef node) {
   return node->getStyle().dimensions()[YGDimensionHeight];
 }
+YOGA_EXPORT float YGNodeStyleGetHeightFloat(YGNodeConstRef node) {
+  return YGResolveValue( node->getStyle().dimensions()[YGDimensionHeight], 0.0 ).unwrap();
+}
 
 YOGA_EXPORT void YGNodeStyleSetMinWidth(
     const YGNodeRef node,
@@ -901,6 +917,9 @@ YOGA_EXPORT void YGNodeStyleSetMinWidthPercent(
 YOGA_EXPORT YGValue YGNodeStyleGetMinWidth(const YGNodeConstRef node) {
   return node->getStyle().minDimensions()[YGDimensionWidth];
 };
+YOGA_EXPORT float YGNodeStyleGetMinWidthFloat(YGNodeConstRef node) {
+  return YGResolveValue( node->getStyle().minDimensions()[YGDimensionWidth], 0.0 ).unwrap();
+}
 
 YOGA_EXPORT void YGNodeStyleSetMinHeight(
     const YGNodeRef node,
@@ -919,6 +938,9 @@ YOGA_EXPORT void YGNodeStyleSetMinHeightPercent(
 YOGA_EXPORT YGValue YGNodeStyleGetMinHeight(const YGNodeConstRef node) {
   return node->getStyle().minDimensions()[YGDimensionHeight];
 };
+YOGA_EXPORT float YGNodeStyleGetMinHeightFloat(YGNodeConstRef node) {
+  return YGResolveValue( node->getStyle().minDimensions()[YGDimensionHeight], 0.0 ).unwrap();
+}
 
 YOGA_EXPORT void YGNodeStyleSetMaxWidth(
     const YGNodeRef node,
@@ -937,6 +959,9 @@ YOGA_EXPORT void YGNodeStyleSetMaxWidthPercent(
 YOGA_EXPORT YGValue YGNodeStyleGetMaxWidth(const YGNodeConstRef node) {
   return node->getStyle().maxDimensions()[YGDimensionWidth];
 };
+YOGA_EXPORT float YGNodeStyleGetMaxWidthFloat(YGNodeConstRef node) {
+  return YGResolveValue( node->getStyle().maxDimensions()[YGDimensionWidth], 0.0 ).unwrap();
+}
 
 YOGA_EXPORT void YGNodeStyleSetMaxHeight(
     const YGNodeRef node,
@@ -955,6 +980,9 @@ YOGA_EXPORT void YGNodeStyleSetMaxHeightPercent(
 YOGA_EXPORT YGValue YGNodeStyleGetMaxHeight(const YGNodeConstRef node) {
   return node->getStyle().maxDimensions()[YGDimensionHeight];
 };
+YOGA_EXPORT float YGNodeStyleGetMaxHeightFloat(YGNodeConstRef node) {
+  return YGResolveValue( node->getStyle().maxDimensions()[YGDimensionHeight], 0.0 ).unwrap();
+}
 
 #define YG_NODE_LAYOUT_PROPERTY_IMPL(type, name, instanceName)   \
   YOGA_EXPORT type YGNodeLayoutGet##name(const YGNodeRef node) { \
